@@ -1,0 +1,11 @@
+project: savantenvs/lxcfs
+target: fuzz_cpuacct_usage
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_cpuacct_usage/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_cpuacct_usage
+    libfuzzer: true
+    timeout: 5
